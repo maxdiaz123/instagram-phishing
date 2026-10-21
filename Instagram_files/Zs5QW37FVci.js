@@ -1,0 +1,6 @@
+;/*FB_PKG_DELIM*/
+
+__d("AggregatedScreenTimeStoreByApp",[],(function(t,n,r,o,a,i){"use strict";var e=(function(){function e(){this.callbacksByApp=new Map,this.valByApp=new Map}var t=e.prototype;return t.update=function(t,n){var e;this.valByApp.set(t,n!=null?n:0);var r=(e=this.callbacksByApp.get(t))!=null?e:[];r.forEach(function(e){e()})},t.get=function(t){return this.valByApp.get(t)},t.subscribe=function(t,n){var e,r=this,o=(e=this.callbacksByApp.get(t))!=null?e:[];return o.push(n),this.callbacksByApp.set(t,o),function(){var e,o=(e=r.callbacksByApp.get(t))!=null?e:[];r.callbacksByApp.set(t,o.filter(function(e){return e!==n}))}},e})(),l=new e;i.AggregatedScreenTimeStoreByApp=l}),66);
+__d("PolarisScreenTimeAppId",[],(function(t,n,r,o,a,i){"use strict";var e="instagram";i.POLARIS_SCREEN_TIME_APP_ID=e}),66);
+__d("ScreenTimeGetCurrentTimestamp",["DateConsts"],(function(t,n,r,o,a,i,l){"use strict";function e(){var e=new Date;return Math.floor(e.getTime()/o("DateConsts").MS_PER_SEC)}function s(){var e=new Date;return Math.floor(e.getTime())}function u(){return new Date}l.getCurrentTimestamp=e,l.getCurrentTimestampMs=s,l.getCurrentDate=u}),98);
+__d("translatedServerString",[],(function(t,n,r,o,a,i){"use strict";function e(e){return e}i.default=e}),66);
